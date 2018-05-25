@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
-admin.autodiscover()
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^',include('blog.urls')),
+    url(r'^$',include('app.blog.urls')),
+    url(r'^login/',include('app.login.urls')),
 ]

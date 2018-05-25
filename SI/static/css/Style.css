@@ -1,0 +1,32 @@
+.bar
+{
+	padding: 5px 0 5px 0;
+	text-align: center;
+	line-height: 32px;
+	background-color: #818181;
+}
+ul.bar 
+{
+    margin-top: 15px;
+}
+.bar li
+{
+    display: inline;
+    padding: 0 10px 0 10px;
+    font-size: 20px;
+}
+
+.bar a{
+	
+    color: #FFFFFF;
+    text-decoration:none;
+    padding: 8px;
+    font-variant: small-caps;
+
+}
+.bar a:hover
+{
+    color: #59d5d8;
+}
+
+

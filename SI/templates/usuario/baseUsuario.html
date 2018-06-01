@@ -29,16 +29,18 @@
 	</style>
 </head>
 <body  style="background-image:url('{% static 'img/downloads-bg.jpg' %}')">
-
+{% block footer %}
 	<center>
-		<h1>Turist Guide</h1>
+	
+	<h1>Turist Guide2</h1>
+
 	</center>
+{% endblock%}
 	<div class="bar">
 		<nav>
 			<ul>
 			    <li><a title="Opcion 1" href="#">Historial</a></li>
 			    <li><a title="Opcion 2" href="{% url 'inicio:index' %}">Inicio</a></li>
-			    <li><a title="Opcion 3" href="{% url 'login:loginn' %}">Login</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -47,9 +49,7 @@
 		
 		{% endblock%}</center>
 	</div>
-	{% block footer %}
 
-	{% endblock %}
 	
 </body>
 </html>

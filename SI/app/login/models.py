@@ -45,5 +45,9 @@ class Usuario(models.Model):
     apellidom = models.CharField(db_column='ApellidoM', max_length=25)  # Field name made lowercase.
     sexo = models.CharField(db_column='Sexo', max_length=1)  # Field name made lowercase.
     pais = models.CharField(db_column='Pais', max_length=10)  # Field name made lowercase.
+    
+    class Meta:
+        managed = False
+        db_table = 'usuario'
 
     

@@ -40,3 +40,5 @@ def logout_view(request):
 	logout(request)
 
 
+def usuario_view(request):
+	return render(request,'usuario/PerfilUsuario.html')

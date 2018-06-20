@@ -64,11 +64,12 @@
 			<ul>
 				{% if usuarios %}
 				{% for user2 in usuarios %}
-			    <li><a title="Opcion 1" href="{% url 'login:histori' %}?variable3={{user2.usuario_idusuario.idusuario}}">Historial</a></li>
-			    <li><a title="Opcion 2" href="{% url 'login:Ulogin' %}?variable={{user2.usuario_idusuario.idusuario}}">Inicio</a></li>
-			    <li><a title="Opcion 3" href="{% url 'login:perfil' %}?variable2={{user2.usuario_idusuario.idusuario}}">Bienvenido {{user2.usuario_idusuario.nombres}}</a></li>
+			    <li><a title="Opcion 1" href="{% url 'login:histori' %}?variable3={{user2.idusuario}}">Historial</a></li>
+			    <li><a title="Opcion 2" href="{% url 'login:Ulogin' %}?variable={{user2.idusuario}}">Inicio</a></li>
+			    <li><a title="Opcion 3" href="{% url 'login:perfil' %}?variable2={{user2.idusuario}}">Bienvenido {{user2.nombres}}</a></li>
 			    {% endfor %}
   				{% endif %}
+  				{{form.nombres.content}}
 			</ul>
 		</nav>
 	</div>

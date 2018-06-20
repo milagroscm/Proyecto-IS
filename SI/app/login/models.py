@@ -38,14 +38,16 @@ class ImagenInfo(models.Model):
 
 class Usuario(models.Model):
     idusuario = models.AutoField(db_column='idUsuario', primary_key=True)  # Field name made lowercase.
-    correo = models.CharField(db_column='Correo', max_length=25)  # Field name made lowercase.
+    correo = models.EmailField(db_column='Correo', max_length=25)  # Field name made lowercase.
     password = models.CharField(db_column='Password', max_length=25)  # Field name made lowercase.
     nombres = models.CharField(db_column='Nombres', max_length=50)  # Field name made lowercase.
     apellidop = models.CharField(db_column='ApellidoP', max_length=25)  # Field name made lowercase.
     apellidom = models.CharField(db_column='ApellidoM', max_length=25)  # Field name made lowercase.
     sexo = models.CharField(db_column='Sexo', max_length=1)  # Field name made lowercase.
     pais = models.CharField(db_column='Pais', max_length=10)  # Field name made lowercase.
-
+    
     class Meta:
         managed = False
         db_table = 'usuario'
+
+    

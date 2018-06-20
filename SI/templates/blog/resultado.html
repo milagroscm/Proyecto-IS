@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>	
+	<h1>Aqui podremos ver la informacion {{labels}}</h1>
+
+	<table>
+	
+		{% if informacion %}
+
+		{% for token2 in informacion %}
+		<tr>
+			<td>Nombre Imagen :</td>
+			<td>{{token2.nombreimagen}}</td>
+		</tr>
+		<tr>
+			<td>Ciudad :</td>
+			<td>{{token2.ciudad}}</td>
+		</tr>
+		<tr>
+			
+			<td>Provincia :</td>
+			<td>{{token2.provincia}}</td>
+		</tr>
+		<tr>
+			<td>Distrito :</td>
+			<td>{{token2.distrito}}</td>
+		</tr>
+		<tr>
+			<td>Direccion :</td>
+			<td>{{token2.direccion}}</td>
+		</tr>
+		<tr>
+			<td>Longitud :</td>
+			<td>{{token2.longitud}}</td>
+		</tr>
+		<tr>
+			<td>Latitud :</td>
+			<td>{{token2.latitud}}</td>
+		</tr>
+		<tr>
+			<td>Descripcion :</td>
+			<td>{{token2.descripcion}}</td>
+		</tr>
+		<tr>
+			<td>Construccion :</td>
+			<td>{{token2.construccion}}</td>
+		</tr>
+		<tr>
+			<td>Estilo Arquitectonico :</td>
+			<td>{{token2.estilo_arquitectonico}}</td>
+		</tr>
+
+
+
+
+
+
+		{% endfor %}
+		{% endif %}
+
+
+
+
+	</table>
+
+
+</body>
+</html>

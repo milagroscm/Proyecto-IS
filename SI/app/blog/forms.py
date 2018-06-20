@@ -35,9 +35,9 @@ class CrearUsuarioForm(forms.ModelForm):
 			'apellidop':forms.TextInput(attrs={'class':'form-control'}),
 			'apellidom':forms.TextInput(attrs={'class':'form-control'}),
 			'pais':forms.TextInput(attrs={'class':'form-control'}),
-			'sexo':forms.CheckboxSelectMultiple(),
+			'sexo':forms.TextInput(attrs={'class':'form-control'}),
 			'correo':forms.TextInput(attrs={'class':'form-control'}),
-			'password':forms.TextInput(attrs={'class':'form-control'}),
+			'password':forms.PasswordInput(attrs={'class':'form-control'}),
 		}	
 		
 

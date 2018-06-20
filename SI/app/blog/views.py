@@ -91,5 +91,9 @@ def CrearPerfil(request):
 	return render(request,'blog/CrearPerfil.html',{'form':form})
 def index(request):
 	return render(request,'blog/index.html')
+<<<<<<< HEAD
 # Create your views here.
 
+=======
+# Create your views here.
+>>>>>>> 5ab2e89959427e5ea985511f1d664328533a57e5

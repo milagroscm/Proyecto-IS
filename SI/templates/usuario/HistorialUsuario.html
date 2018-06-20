@@ -1,0 +1,21 @@
+{% extends 'base/baseHistorial.html' %}
+
+{% block content %}
+
+<table class="table">
+	<thead>
+		<td>#</td>
+		<td>Nombre de lugar turistico</td>
+	</thead>
+	<tbody>
+		{% if usuarios %}
+		{% for user2 in usuarios %}
+		<tr>
+			<td>{{user2.idhistorial_usuario}}</td>
+			<td>{{user2.imagen_info_idimagen.nombreimagen}}</td>
+		</tr>
+		{% endfor%}
+		{%endif%}
+	</tbody>
+</table>
+{%endblock%}

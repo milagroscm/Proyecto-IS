@@ -7,20 +7,27 @@
 
 	<title>{% block title %} Guide {% endblock %}</title>
 	{%block extrahead%}
-	<link href="{% static 'css/Style.css'%}" rel="stylesheet">
+	<link href="{% static 'css/bootstrape.css'%}" rel="stylesheet">
 	{%endblock%}
 	<style>
 	h1 
 	{
-		color:blue;
+		color:white;
 		font-family: verdana;
-		/*.thumb {
+		margin-top: 3%;
+		font-size: 40pt;
+		text-shadow: 5px 5px 5px #424242;
+		.thumb {
 
-            height: 300px;
+            height: 500px;
             border: 30px solid #fff;
             margin: 10px 5px 0 0;
          }*/
 
+	}
+	input
+	{
+		size:20% ;
 	}
 	.content{
         margin-top: 10%;
@@ -28,17 +35,19 @@
 
 	</style>
 </head>
-<body  style="background-image:url('{% static 'img/downloads-bg.jpg' %}')">
+<body  style="background-image:url('{% static 'img/fondo.jpg' %}');
+			 background-size: 100% ;">
+
 
 	<center>
-		<h1>Turist Guide</h1>
+		<h1>TOUR GUIDE</h1>
 	</center>
 	<div class="bar">
 		<nav>
 			<ul>
-			    <li><a title="Opcion 1" href="#">Historial</a></li>
-			    <li><a title="Opcion 2" href="{% url 'inicio:index' %}">Inicio</a></li>
-			    <li><a title="Opcion 3" href="{% url 'login:loginn' %}">Login</a></li>
+			    <li><a title="Opcion 1" href="{% url 'inicio:index' %}">Inicio</a></li>
+			    <li><a title="Opcion 2" href="{% url 'login:loginn' %}">Login</a></li>
+			    <li><a title="Opcion 3" href="{% url 'inicio:creandoPer' %}">Crear Perfil</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -50,6 +59,6 @@
 	{% block footer %}
 
 	{% endblock %}
-	
+
 </body>
 </html>

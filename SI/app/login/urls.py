@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from app.login.views import loginn,usuario_view
+from app.login.views import loginn,usuario_view,usuariologin,historial_view
 
 from django.urls import path
 
@@ -12,6 +12,6 @@ urlpatterns=[
 	#url(r'^$',loginn, name ="loginn"),
 	path('perfil/',usuario_view, name = "perfil"),
 	path('',loginn, name = "loginn"),
-	 
-
+	path('usuarioPer/',usuariologin,name="Ulogin"),
+	path('historial/',historial_view,name="histori"),
 ]

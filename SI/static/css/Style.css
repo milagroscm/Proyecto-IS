@@ -1,9 +1,9 @@
 .bar
 {
-	padding: 5px 0 5px 0;
-	text-align: center;
-	line-height: 32px;
-	background-color: #818181;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    line-height: 32px;
+    background-color: #818181;
 }
 ul.bar 
 {
@@ -17,7 +17,7 @@ ul.bar
 }
 
 .bar a{
-	
+    
     color: #FFFFFF;
     text-decoration:none;
     padding: 8px;
@@ -28,5 +28,3 @@ ul.bar
 {
     color: #59d5d8;
 }
-
-

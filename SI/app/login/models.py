@@ -7,15 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-"""
-class HistorialUsuario(models.Model):
-    idhistorial_usuario = models.AutoField(db_column='idHistorial_Usuario', primary_key=True)  # Field name made lowercase.
-    usuario_idusuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='Usuario_idUsuario')  # Field name made lowercase.
-    imagen_info_idimagen = models.ForeignKey('ImagenInfo', models.DO_NOTHING, db_column='Imagen_Info_idImagen')  # Field name made lowercase.
 
-    class Meta:
-        managed = False
-        db_table = 'historial_usuari
 
 class ImagenInfo(models.Model):
     idimagen = models.AutoField(db_column='idImagen', primary_key=True)  # Field name made lowercase.
@@ -32,9 +24,17 @@ class ImagenInfo(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'imagen_info'o'
+        db_table = 'imagen_info'
 
-"""
+
+class HistorialUsuario(models.Model):
+    idhistorial_usuario = models.AutoField(db_column='idHistorial_Usuario', primary_key=True)  # Field name made lowercase.
+    usuario_idusuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='Usuario_idUsuario')  # Field name made lowercase.
+    imagen_info_idimagen = models.ForeignKey('ImagenInfo', models.DO_NOTHING, db_column='Imagen_Info_idImagen')  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'historial_usuario'
 
 class Usuario(models.Model):
     idusuario = models.AutoField(db_column='idUsuario', primary_key=True)  # Field name made lowercase.
@@ -46,4 +46,6 @@ class Usuario(models.Model):
     sexo = models.CharField(db_column='Sexo', max_length=1)  # Field name made lowercase.
     pais = models.CharField(db_column='Pais', max_length=10)  # Field name made lowercase.
 
-    
+    class Meta:
+        managed = False
+        db_table = 'usuario'

@@ -28,7 +28,26 @@
 	.content{
         margin-top: 5%;
     }
-
+    .table {
+    	width: 40%;
+    	margin:5% 5% 35% 5% ;
+    	border-width: -8% 1px 0px 1px; 
+    	border-style: solid; 
+    	border-color: lightgrey;
+    	text-align: center;
+    }
+    .table thead{
+    	background: #f1f3f6;
+    	border-style: solid; 
+    	border-color: lightgrey;
+    	
+    }
+    .table tbody{
+    	background: white;
+    	border-style: solid; 
+    	border-color: lightgrey;
+    	
+    }
 	</style>
 </head>
 <body  style="background-image:url('{% static 'img/fondo.jpg' %}');
@@ -43,16 +62,13 @@
 	<div class="bar">
 		<nav>
 			<ul>
-				
-				
-			    <li><a title="Opcion 1" href="{% url 'login:histori' %}?variable3={{user2.idusuario}}">Historial</a></li>
-			    <li><a title="Opcion 2" href="{% url 'login:Ulogin' %}?variable={{user2.idusuario}}">Inicio</a></li>
-			    {% if usuarios %}
+				{% if usuarios %}
 				{% for user2 in usuarios %}
-			    <li><a title="Opcion 3" href="{% url 'login:perfil' %}?variable2={{user2.idusuario}}">Bienvenido {{user2.nombres}}</a></li>
+			    <li><a title="Opcion 1" href="{% url 'login:histori' %}?variable3={{user2.usuario_idusuario.idusuario}}">Historial</a></li>
+			    <li><a title="Opcion 2" href="{% url 'login:Ulogin' %}?variable={{user2.usuario_idusuario.idusuario}}">Inicio</a></li>
+			    <li><a title="Opcion 3" href="{% url 'login:perfil' %}?variable2={{user2.usuario_idusuario.idusuario}}">Bienvenido {{user2.usuario_idusuario.nombres}}</a></li>
 			    {% endfor %}
   				{% endif %}
-  				{{form.nombres.content}}
 			</ul>
 		</nav>
 	</div>

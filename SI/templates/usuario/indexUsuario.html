@@ -10,25 +10,6 @@
     }
 </style>
 
-
-
-{% block footer%}
-
-{% if usuarios %}
-{% for user2 in usuarios %}
-
-
-  <center>
-  
-  <h1>WELCOME {{user2.nombres}}</h1>
-
-  </center>
-
-  {% endfor %}
-  {% endif %}
-
-{% endblock%}
-
 {%block content%}
 <label for="photo">Incluya una foto</label>
 	<div class="drag-drop">

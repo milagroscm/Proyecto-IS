@@ -50,10 +50,3 @@ class Usuario(models.Model):
         managed = False
         db_table = 'usuario'
 
-<<<<<<< HEAD
-    
-=======
-    class Meta:
-        managed = False
-        db_table = 'usuario'
->>>>>>> 5ab2e89959427e5ea985511f1d664328533a57e5

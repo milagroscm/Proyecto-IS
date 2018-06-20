@@ -1,7 +1,4 @@
 
-<<<<<<< HEAD
-
-=======
 # Create your models here.
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
@@ -12,8 +9,6 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-"""
->>>>>>> 5fa2004af657f4903d318ecff79302738998a5cb
 class HistorialUsuario(models.Model):
     idhistorial_usuario = models.AutoField(db_column='idHistorial_Usuario', primary_key=True)  # Field name made lowercase.
     usuario_idusuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='Usuario_idUsuario')  # Field name made lowercase.
@@ -21,11 +16,10 @@ class HistorialUsuario(models.Model):
 
     class Meta:
         managed = False
-<<<<<<< HEAD
+
         db_table = 'historial_usuario'
-=======
-        db_table = 'historial_usuari
->>>>>>> 5fa2004af657f4903d318ecff79302738998a5cb
+
+
 
 class ImagenInfo(models.Model):
     idimagen = models.AutoField(db_column='idImagen', primary_key=True)  # Field name made lowercase.
@@ -42,8 +36,8 @@ class ImagenInfo(models.Model):
 
     class Meta:
         managed = False
-<<<<<<< HEAD
         db_table = 'imagen_info'
+
 class Usuario(models.Model):
     idusuario = models.AutoField(db_column='idUsuario', primary_key=True)  # Field name made lowercase.
     correo = models.CharField(db_column='Correo', max_length=25)  # Field name made lowercase.
@@ -57,21 +51,5 @@ class Usuario(models.Model):
     class Meta:
         managed = False
         db_table = 'usuario'
-=======
-        db_table = 'imagen_info'o'
+  
 
-"""
-"""
-class Usuario(models.Model):
-    nombres = models.CharField(max_length=50)  # Field name made lowercase.
-    apellidop = models.CharField(max_length=25)  # Field name made lowercase.
-    apellidom = models.CharField(max_length=25)  # Field name made lowercase.
-    sexo = models.CharField(max_length=1)  # Field name made lowercase.
-    pais = models.CharField(max_length=10)  # Field name made lowercase.
-    correo = models.CharField(max_length=25)  # Field name made lowercase.
-    password = models.CharField(max_length=25)  # Field name made lowercase.
-    
-    def __str__(self):
-        return '{}'.format(self.nombres)"""
-from app.login.models import Usuario
->>>>>>> 5fa2004af657f4903d318ecff79302738998a5cb

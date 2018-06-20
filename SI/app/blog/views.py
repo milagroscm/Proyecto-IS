@@ -1,6 +1,6 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
-<<<<<<< HEAD
+
 #from django.core.files.storage import FileSystemStorege
 from django.core.files.storage import FileSystemStorage
 from django.core.files.storage import Storage
@@ -75,7 +75,7 @@ def info(request):
 
 	
 	# Create your views here.
-=======
+
 from app.blog.forms import CrearUsuarioForm
 from app.blog.models import Usuario
 def CreandoPerfil(request):
@@ -92,4 +92,4 @@ def CrearPerfil(request):
 def index(request):
 	return render(request,'blog/index.html')
 # Create your views here.
->>>>>>> 5fa2004af657f4903d318ecff79302738998a5cb
+

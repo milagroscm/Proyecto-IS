@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>	
-	<h1>Aqui podremos ver la informacion {{labels}}</h1>
 
-	<table>
-	
+{% extends 'base/baseHistorial.html' %}
+
+
+{% block content %}
+	<table class="table">
+
+		<thead>
+			<td>#</td>
+			<td>Aqui podremos ver la informacion {{labels}}</td>
+		</thead>
+
+
+		<tbody>
 		{% if informacion %}
 
 		{% for token2 in informacion %}
@@ -55,6 +58,7 @@
 		</tr>
 
 
+		</tbody>
 
 
 
@@ -67,6 +71,4 @@
 
 	</table>
 
-
-</body>
-</html>
+{%endblock%}

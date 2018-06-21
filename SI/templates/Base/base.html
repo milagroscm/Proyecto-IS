@@ -25,6 +25,26 @@
          }*/
 
 	}
+	.table {
+    	width: 50%;
+    	margin:-8% 5% 35% 5% ;
+    	border-width: -8% 1px 0px 1px; 
+    	border-style: solid; 
+    	border-color: lightgrey;
+    	text-align: center;
+    }
+    .table thead{
+    	background: #f1f3f6;
+    	border-style: solid; 
+    	border-color: lightgrey;
+    	
+    }
+    .table tbody{
+    	background: white;
+    	border-style: solid; 
+    	border-color: lightgrey;
+    	
+    }
 	input
 	{
 		size:20% ;
@@ -36,7 +56,11 @@
 	</style>
 </head>
 <body  style="background-image:url('{% static 'img/fondo.jpg' %}');
-			 background-size: 100% ;">
+			 background-size: 100% ;
+			 background-repeat: no-repeat;
+			 background-position: center center;
+			 background-attachment: fixed;
+			 ">
 
 
 	<center>
@@ -45,8 +69,8 @@
 	<div class="bar">
 		<nav>
 			<ul>
-			    <li><a title="Opcion 1" href="{% url 'inicio:index' %}">Inicio</a></li>
 			    <li><a title="Opcion 2" href="{% url 'login:loginn' %}">Login</a></li>
+			    <li><a title="Opcion 1" href="{% url 'inicio:index' %}">Inicio</a></li>
 			    <li><a title="Opcion 3" href="{% url 'inicio:creandoPer' %}">Crear Perfil</a></li>
 			</ul>
 		</nav>

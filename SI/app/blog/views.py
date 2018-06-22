@@ -7,6 +7,8 @@ from django.core.files.storage import Storage
 from django.core.files.base import ContentFile
 
 from app.blog.models import ImagenInfo
+from app.blog.models import HistorialUsuario
+
 
 
 
@@ -21,6 +23,60 @@ from google.cloud.vision import types
 def index(request):
 	return render(request,'blog/index.html')
 
+
+
+def infoImaUsua(request):
+
+	os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "melvin-afa24119e798.json"
+	
+	vision_client = vision.ImageAnnotatorClient()
+	myfile = request.FILES["file2"]
+
+	fs = FileSystemStorage()
+	filename = fs.save(myfile.name, myfile)
+	file_name = fs.url(filename)
+
+	with io.open(file_name,"rb") as image_file:
+		content = image_file.read()
+		image = types.Image(content=content)
+
+
+	#response = vision_client.label_detection(image = image)
+	#labels = response.label_annotations
+	#response = vision_client.landmark_detection(image = image)
+	#labels = response.landmark_annotations
+
+	response = vision_client.web_detection(image = image).web_detection
+	labels = response.web_entities
+	label_data = ""
+	c = 0
+	print('Labels: ')
+	for label in labels:
+		if(c==0):
+
+			label_data = label_data + label.description
+		else:
+			break
+		c = c+1
+
+	print(label_data)
+
+
+	token = ImagenInfo.objects.filter(nombreimagen=label_data).exists()
+	if token == True:
+
+		token2 = ImagenInfo.objects.filter(nombreimagen=label_data)
+		token3 = Usuario.objects.filter(idusuario = request.session["ID"])
+		print(token2)
+
+		record = HistorialUsuario(usuario_idusuario=token3[0],imagen_info_idimagen=token2[0])
+		record.save()
+
+		#contexto ={"informacion" : token2}
+		return render(request,'blog/resultado.html',{"labels":label_data , "image":file_name,"informacion" : token2})
+	else:
+		print("no hay imformacion")
+		return render(request,'blog/resultado.html',{"labels":label_data , "image":file_name})
 
 
 def info(request):

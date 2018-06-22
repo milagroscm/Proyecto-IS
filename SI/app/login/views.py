@@ -9,8 +9,9 @@ from django.contrib.auth import authenticate, logout
 from app.login.models import Usuario,HistorialUsuario
 
 def usuariologin(request):
-	contexto=request.GET['variable']
-	user2=Usuario.objects.filter(idusuario=contexto)
+	#contexto=request.GET['variable']
+	print(request.session["ID"])
+	user2=Usuario.objects.filter(idusuario=request.session["ID"])
 	con={'usuarios':user2}
 	return render(request,'usuario/indexUsuario.html',con)
 
@@ -26,6 +27,10 @@ def loginn(request):
 			if user == True:
 					
 					user2 = Usuario.objects.filter(correo = usuario,password =password)
+
+					request.session["ID"] = user2[0].idusuario
+					request.session.modified = True
+					#print(user2[0].idusuario)
 					contexto = {'usuarios': user2}
 			
 					return render(request,'usuario/indexUsuario.html',contexto)	
@@ -38,10 +43,22 @@ def loginn(request):
 def logout_view(request):
 	logout(request)
 
+def Cerrar(request):
+	#form = form = UsuarioForm()
+	#print(request.session['ID'])
+	#key = request.session.pop("ID")
+	#print(request.session['ID'])
+	return render(request,'blog/index.html')
+
 def historial_view(request):
-	con=request.GET['variable3']
-	user=HistorialUsuario.objects.filter(usuario_idusuario=con)
+
+
+	print(request.session['ID'])
+	#con=request.GET['variable3']
+	user=HistorialUsuario.objects.filter(usuario_idusuario=request.session['ID'])
+
 	contexto={'usuarios' : user}
+	print(user)
 	return render(request,'usuario/HistorialUsuario.html',contexto)
 
 def usuario_view(request):
@@ -53,7 +70,7 @@ def usuario_view(request):
 		form= CrearUsuarioForm(request.POST,instance=user2)
 		if(form.is_valid()):
 			form.save()
-		return redirect("{% url 'login:Ulogin'%}?variable={{var}} ")
+		return render(request,'usuario/PerfilUsuario.html',{'form':form})
 	return render(request,'usuario/PerfilUsuario.html',{'form':form})
 
 

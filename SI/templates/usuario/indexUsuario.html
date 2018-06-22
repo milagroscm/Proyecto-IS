@@ -13,7 +13,9 @@
 {%block content%}
 <label for="photo">Incluya una foto</label>
 	<div class="drag-drop">
-	<input type="file" id="files" name="files[]" />
+
+  <form action="/infoImaUsua/" method='post' enctype="multipart/form-data">{% csrf_token %}
+  <input type="file" id="files" name="file2" />
         <br />
         <output id="list"></output>
         <script>
@@ -42,7 +44,12 @@
              
               document.getElementById('files').addEventListener('change', archivo, false);
       </script>
-	</div>
-	<button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+
+  </form>
+
+
+
 	<button type="reset" class="btn btn-default">Cancelar</button>
 {%endblock%}

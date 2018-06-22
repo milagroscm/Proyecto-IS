@@ -56,10 +56,13 @@ def historial_view(request):
 	print(request.session['ID'])
 	#con=request.GET['variable3']
 	user=HistorialUsuario.objects.filter(usuario_idusuario=request.session['ID'])
+	user2 = Usuario.objects.filter(idusuario =request.session['ID'] )
+
 
 	contexto={'usuarios' : user}
+	contexto2={'usuarios2' : user2}
 	print(user)
-	return render(request,'usuario/HistorialUsuario.html',contexto)
+	return render(request,'usuario/HistorialUsuario.html',{'usuarios' : user ,'usuarios2' : user2 })
 
 def usuario_view(request):
 	var=request.GET['variable2']

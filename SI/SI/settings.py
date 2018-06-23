@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'mysql_cymysql',
         'NAME': 'tour_guide',
         'USER':'root',#cambiar por los datos de su bd
-        'PASSWORD':'avefenix',#cambiar por los datos de su bd
+        'PASSWORD':'',#cambiar por los datos de su bd
         'HOST':'localhost',
         'PORT':'',
     }

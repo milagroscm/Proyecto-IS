@@ -67,14 +67,16 @@ def historial_view(request):
 def usuario_view(request):
 	var=request.GET['variable2']
 	user2=Usuario.objects.get(idusuario=var)
+	user = Usuario.objects.filter(idusuario =request.session['ID'] )
+	contexto={ }
 	if request.method=='GET':
 		form= CrearUsuarioForm(instance=user2)
 	else:
 		form= CrearUsuarioForm(request.POST,instance=user2)
 		if(form.is_valid()):
 			form.save()
-		return render(request,'usuario/PerfilUsuario.html',{'form':form})
-	return render(request,'usuario/PerfilUsuario.html',{'form':form})
+		return render(request,'usuario/PerfilUsuario.html',{'form':form,'usuarios' : user})
+	return render(request,'usuario/PerfilUsuario.html',{'form':form,'usuarios' : user})
 
 
 

@@ -9,11 +9,12 @@
                 <!-- Se inicia el form (ojo todos los elementos de formulario deben ir dentro de esta etiqueta-->
                 <form name="modifyProfile" id="profileForm" method="post">
                 {% csrf_token %}
-                {{form.as_p}}
-
+                <div class="Perfil">
+                    {{form.as_p}}
+               
 
                 <button type="submit" class="btn btn-secundary">Actualizar</button>
-
+                 </div>
 
                 <!-- 
                 <div class="col-md-12" style="border-width: 1px 1px 0px 1px; border-style: solid; border-color: lightgrey; background: #f1f3f6;">

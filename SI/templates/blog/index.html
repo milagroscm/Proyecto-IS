@@ -8,6 +8,7 @@
         border: 30px solid #fff;
         margin: 50px;
     }
+  
 </style>
 
 {%block content%}
@@ -47,14 +48,10 @@
 
   </div>
   <button type="submit" class="btn btn-primary"  ">Enviar</button>
-  
+   <button class="btn btn-default" onClick="location.href='{% url 'inicio:index' %}'">Cancelar</button>
   </form>
-
-
-
-	<button class="btn btn-default" onClick="location.href='{% url 'inicio:index' %}'">Cancelar</button>
-
-	</div>
-
-
+  
 {%endblock%}
+{%block container%}
+  
+  {%endblock%}

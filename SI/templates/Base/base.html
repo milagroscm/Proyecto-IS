@@ -3,11 +3,13 @@
 <html lang="es">
 
 <head>
+	 <meta name="viewport" content="initial-scale=1.0">
 	<meta charset="UTF-8">
 
 	<title>{% block title %} Guide {% endblock %}</title>
-	{%block extrahead%}
 	<link href="{% static 'css/bootstrape.css'%}" rel="stylesheet">
+	{%block extrahead%}
+	
 	{%endblock%}
 	<style>
 	h1 
@@ -27,7 +29,7 @@
 	}
 	.table {
     	width: 50%;
-    	margin:-8% 5% 35% 5% ;
+    	margin:-8% auto ;
     	border-width: -8% 1px 0px 1px; 
     	border-style: solid; 
     	border-color: lightgrey;
@@ -52,7 +54,12 @@
 	.content{
         margin-top: 10%;
     }
-
+    .map{
+    	margin-top: 10%;
+    	border-width: 5px; 
+    	border-style: solid; 
+    	border-color: black;
+    }
 	</style>
 </head>
 <body  style="background-image:url('{% static 'img/fondo.jpg' %}');
@@ -81,6 +88,8 @@
 		
 		{% endblock%}</center>
 	</div>
+	
+	
 	{% block footer %}
 
 	{% endblock %}

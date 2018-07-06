@@ -1,0 +1,17 @@
+
+Alumno=Nicolas Jimenez Artica
+
+
+<Poligonos>
+	<Figura Tipo="triangulo">
+		<coordenada>15,64</coordenada>
+		<coordenada>18,-66</coordenada>
+		<coordenada> 32,64</coordenada>
+	</Figura>
+	<Figura Tipo="cuadrado">
+		<coordenada>15,64</coordenada>
+		<coordenada>18,-66</coordenada>
+		<coordenada>32,64</coordenada>
+		<coordenada>28,88</coordenada> 
+	</Figura>
+</Poligonos>
